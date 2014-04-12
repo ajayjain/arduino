@@ -14,6 +14,7 @@ void setup()                                 // Built in initialization block
   
   Serial.begin(9600);                        // Set data rate to 9600 bps
   servoLeft.attach(13);                      // Attach left signal to P13 
+  servoRight.attach(12);
 }  
  
 void loop()                                  // Main loop auto-repeats
@@ -33,8 +34,10 @@ void loop()                                  // Main loop auto-repeats
 
     Serial.println("Running...");
     servoLeft.writeMicroseconds(pulseWidth);   // Pin 13 servo speed = pulse
+    servoRight.writeMicroseconds(pulseWidth);   // Pin 13 servo speed = pulse
     delay(6000);                               // ..for 6 seconds 
     servoLeft.writeMicroseconds(1500);         // Pin 13 servo speed = stop
+    servoLeft.writeMicroseconds(1500);   // Pin 13 servo speed = pulse
     tone(4, 4000, 75);                         // Test complete
   }
 }
