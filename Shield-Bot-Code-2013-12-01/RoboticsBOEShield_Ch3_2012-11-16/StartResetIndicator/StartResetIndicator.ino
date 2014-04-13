@@ -3,14 +3,16 @@
  * Test the piezospeaker circuit.
  */ 
 
-#include <BotUtils.h>
+#include <BoeBot.h>
+
+BoeBot bot;
 
 void setup()                                 // Built in initialization block
 { 
   Serial.begin(9600);
   Serial.println("Beep!");  
   
-  BotUtils::start_tone(4);
+  bot.start_tone(4);
 }  
  
 void loop()                                  // Main loop auto-repeats
